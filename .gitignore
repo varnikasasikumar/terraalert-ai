@@ -1,0 +1,53 @@
+# Java / Spring Boot
+target/
+*.class
+*.jar
+*.war
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Node / React
+node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Large datasets / ML files
+*.nc
+*.tif
+*.tiff
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+
+# OS
+.DS_Store
+Thumbs.db
