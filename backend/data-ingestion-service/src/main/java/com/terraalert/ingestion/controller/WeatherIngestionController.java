@@ -61,7 +61,7 @@ public class WeatherIngestionController {
         return ResponseEntity
                 .ok(result.getObservation());
     }
-    // READ ALL
+ 
     @GetMapping
     public ResponseEntity<List<WeatherObservation>>
             getAllWeatherObservations() {
@@ -72,7 +72,6 @@ public class WeatherIngestionController {
         );
     }
 
-    // READ BY ID
     @GetMapping("/{id}")
     public ResponseEntity<WeatherObservation>
             getWeatherObservationById(
@@ -89,7 +88,6 @@ public class WeatherIngestionController {
         return ResponseEntity.ok(observation);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteWeatherObservation(
             @PathVariable String id) {

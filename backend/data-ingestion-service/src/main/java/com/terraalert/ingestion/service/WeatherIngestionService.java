@@ -14,15 +14,19 @@ public class WeatherIngestionService {
 
     private final WeatherObservationRepository repository;
     private final WeatherApiClient weatherApiClient;
-
+    private final DataProcessingClient dataProcessingClient;
+    
     public WeatherIngestionService(
             WeatherObservationRepository repository,
-            WeatherApiClient weatherApiClient) {
+            WeatherApiClient weatherApiClient,
+            DataProcessingClient dataProcessingClient) {
 
         this.repository = repository;
         this.weatherApiClient = weatherApiClient;
+        this.dataProcessingClient = dataProcessingClient;
     }
-
+    
+    
     public IngestionResult saveWeatherObservation(
             WeatherObservation observation) {
 
@@ -30,33 +34,57 @@ public class WeatherIngestionService {
             observation.setObservedAt(LocalDateTime.now());
         }
 
-        return repository
-                .findByLocationAndObservedAtAndSource(
+        var existingObservation =
+                repository.findByLocationAndObservedAtAndSource(
                         observation.getLocation(),
                         observation.getObservedAt(),
                         observation.getSource()
-                )
-                .map(existingObservation ->
-                        new IngestionResult(
-                                existingObservation,
-                                false
-                        )
-                )
-                .orElseGet(() ->
-                        new IngestionResult(
-                                repository.save(observation),
-                                true
-                        )
                 );
+
+        if (existingObservation.isPresent()) {
+
+            return new IngestionResult(
+                    existingObservation.get(),
+                    false
+            );
+        }
+
+        WeatherObservation savedObservation =
+                repository.save(observation);
+
+        try {
+
+            String processingResponse =
+                    dataProcessingClient.processWeatherData(
+                            savedObservation
+                    );
+
+            System.out.println(
+                    "Data Processing Response: "
+                    + processingResponse
+            );
+
+        } catch (Exception e) {
+
+            System.out.println(
+                    "Data Processing Service Error: "
+                    + e.getMessage()
+            );
+        }
+
+        return new IngestionResult(
+                savedObservation,
+                true
+        );
     }
 
-    // Get all weather observations
+    
     public List<WeatherObservation> getAllWeatherObservations() {
 
         return repository.findAll();
     }
 
-    // Get weather observation by ID
+   
     public WeatherObservation getWeatherObservationById(
             String id) {
 
@@ -64,13 +92,13 @@ public class WeatherIngestionService {
                 .orElse(null);
     }
 
-    // Delete weather observation
+ 
     public void deleteWeatherObservation(String id) {
 
         repository.deleteById(id);
     }
 
-    // Ingest current weather from Open-Meteo
+
     public IngestionResult ingestCurrentWeather(
             double latitude,
             double longitude,
@@ -96,7 +124,7 @@ public class WeatherIngestionService {
         observation.setWindSpeed(current.getWindSpeed());
         observation.setSource("Open-Meteo");
         observation.setObservedAt(LocalDateTime.now());
-        // Use the duplicate-protected save method
+  
         return saveWeatherObservation(observation);
     }
 }
