@@ -25,7 +25,17 @@ public class ProcessedWeatherData {
     private Double elevation;
 
     private LocalDateTime observedAt;
+    private Double reflectivityMean;
+    private Double reflectivityMax;
+    private Double reflectivityMin;
+    private Double reflectivityStd;
+    private Double reflectivityMedian;
 
+    private Double reflectivityGe20Pct;
+    private Double reflectivityGe30Pct;
+    private Double reflectivityGe40Pct;
+
+    private Integer radarObservationCount;
     private String source;
     
     public ProcessedWeatherData() {
@@ -125,5 +135,77 @@ public class ProcessedWeatherData {
 
     public void setSource(String source) {
         this.source = source;
+    }
+    
+    public Double getReflectivityMean() {
+        return reflectivityMean;
+    }
+
+    public void setReflectivityMean(Double reflectivityMean) {
+        this.reflectivityMean = reflectivityMean;
+    }
+
+    public Double getReflectivityMax() {
+        return reflectivityMax;
+    }
+
+    public void setReflectivityMax(Double reflectivityMax) {
+        this.reflectivityMax = reflectivityMax;
+    }
+
+    public Double getReflectivityMin() {
+        return reflectivityMin;
+    }
+
+    public void setReflectivityMin(Double reflectivityMin) {
+        this.reflectivityMin = reflectivityMin;
+    }
+
+    public Double getReflectivityStd() {
+        return reflectivityStd;
+    }
+
+    public void setReflectivityStd(Double reflectivityStd) {
+        this.reflectivityStd = reflectivityStd;
+    }
+
+    public Double getReflectivityMedian() {
+        return reflectivityMedian;
+    }
+
+    public void setReflectivityMedian(Double reflectivityMedian) {
+        this.reflectivityMedian = reflectivityMedian;
+    }
+
+    public Double getReflectivityGe20Pct() {
+        return reflectivityGe20Pct;
+    }
+
+    public void setReflectivityGe20Pct(Double reflectivityGe20Pct) {
+        this.reflectivityGe20Pct = reflectivityGe20Pct;
+    }
+
+    public Double getReflectivityGe30Pct() {
+        return reflectivityGe30Pct;
+    }
+
+    public void setReflectivityGe30Pct(Double reflectivityGe30Pct) {
+        this.reflectivityGe30Pct = reflectivityGe30Pct;
+    }
+
+    public Double getReflectivityGe40Pct() {
+        return reflectivityGe40Pct;
+    }
+
+    public void setReflectivityGe40Pct(Double reflectivityGe40Pct) {
+        this.reflectivityGe40Pct = reflectivityGe40Pct;
+    }
+
+    public Integer getRadarObservationCount() {
+        return radarObservationCount;
+    }
+
+    public void setRadarObservationCount(Integer radarObservationCount) {
+        this.radarObservationCount = radarObservationCount;
     }
 }

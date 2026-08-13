@@ -10,26 +10,60 @@ import com.terraalert.riskassessment.dto.RiskAssessmentResponse;
 @Service
 public class RiskAssessmentService {
 
-    public RiskAssessmentResponse assessRisk(
-            RiskAssessmentRequest request) {
+	public RiskAssessmentResponse assessRisk(
+	        RiskAssessmentRequest request) {
 
-        /*
-         * The actual risk assessment policy will be implemented
-         * after the flood and landslide model outputs are finalized.
-         *
-         * For now, this service only prepares the response structure.
-         */
+	    double floodProbability =
+	            request.getFloodProbability();
 
-        return new RiskAssessmentResponse(
-                request.getLocation(),
-                request.getLatitude(),
-                request.getLongitude(),
-                request.getFloodProbability(),
-                request.getLandslideProbability(),
-                "UNKNOWN",
-                "UNKNOWN",
-                "UNKNOWN",
-                LocalDateTime.now()
-        );
-    }
+	    double landslideProbability =
+	            request.getLandslideProbability();
+
+	    String floodRisk;
+	    String landslideRisk;
+	    String overallRisk;
+
+	    if (floodProbability >= 0.75) {
+	        floodRisk = "HIGH";
+	    } else if (floodProbability >= 0.50) {
+	        floodRisk = "MEDIUM";
+	    } else {
+	        floodRisk = "LOW";
+	    }
+
+	    if (landslideProbability >= 0.75) {
+	        landslideRisk = "HIGH";
+	    } else if (landslideProbability >= 0.50) {
+	        landslideRisk = "MEDIUM";
+	    } else {
+	        landslideRisk = "LOW";
+	    }
+
+	    if (floodRisk.equals("HIGH")
+	            || landslideRisk.equals("HIGH")) {
+
+	        overallRisk = "HIGH";
+
+	    } else if (floodRisk.equals("MEDIUM")
+	            || landslideRisk.equals("MEDIUM")) {
+
+	        overallRisk = "MEDIUM";
+
+	    } else {
+
+	        overallRisk = "LOW";
+	    }
+
+	    return new RiskAssessmentResponse(
+	            request.getLocation(),
+	            request.getLatitude(),
+	            request.getLongitude(),
+	            floodProbability,
+	            landslideProbability,
+	            floodRisk,
+	            landslideRisk,
+	            overallRisk,
+	            LocalDateTime.now()
+	    );
+	}
 }

@@ -32,13 +32,42 @@ public class EvacuationResourceService {
 
         if (!shelters.isEmpty()) {
 
-            Shelter shelter = shelters.get(0);
+            Shelter nearest = null;
+            double shortestDistance = Double.MAX_VALUE;
 
-            nearestShelter = shelter.getName();
+            for (Shelter shelter : shelters) {
 
-            availableCapacity =
-                    shelter.getCapacity()
-                    - shelter.getCurrentOccupancy();
+                double distance = calculateDistance(
+                        request.getLatitude(),
+                        request.getLongitude(),
+                        shelter.getLatitude(),
+                        shelter.getLongitude()
+                );
+
+                int shelterAvailableCapacity =
+                        shelter.getCapacity()
+                        - shelter.getCurrentOccupancy();
+
+                // Ignore shelters that have no available capacity
+                if (shelterAvailableCapacity <= 0) {
+                    continue;
+                }
+
+                if (distance < shortestDistance) {
+
+                    shortestDistance = distance;
+                    nearest = shelter;
+                }
+            }
+
+            if (nearest != null) {
+
+                nearestShelter = nearest.getName();
+
+                availableCapacity =
+                        nearest.getCapacity()
+                        - nearest.getCurrentOccupancy();
+            }
         }
 
         String recommendation;
@@ -70,5 +99,39 @@ public class EvacuationResourceService {
                 availableCapacity,
                 LocalDateTime.now()
         );
+    }
+    
+    private double calculateDistance(
+            double latitude1,
+            double longitude1,
+            double latitude2,
+            double longitude2) {
+
+        final double EARTH_RADIUS_KM = 6371.0;
+
+        double lat1 = Math.toRadians(latitude1);
+        double lat2 = Math.toRadians(latitude2);
+
+        double deltaLat =
+                Math.toRadians(latitude2 - latitude1);
+
+        double deltaLon =
+                Math.toRadians(longitude2 - longitude1);
+
+        double a =
+                Math.sin(deltaLat / 2)
+                * Math.sin(deltaLat / 2)
+                + Math.cos(lat1)
+                * Math.cos(lat2)
+                * Math.sin(deltaLon / 2)
+                * Math.sin(deltaLon / 2);
+
+        double c =
+                2 * Math.atan2(
+                        Math.sqrt(a),
+                        Math.sqrt(1 - a)
+                );
+
+        return EARTH_RADIUS_KM * c;
     }
 }

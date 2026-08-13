@@ -74,6 +74,42 @@ public class WeatherProcessingService {
         processedData.setElevation(
                 request.getElevation()
         );
+        
+        processedData.setReflectivityMean(
+                request.getReflectivityMean()
+        );
+
+        processedData.setReflectivityMax(
+                request.getReflectivityMax()
+        );
+
+        processedData.setReflectivityMin(
+                request.getReflectivityMin()
+        );
+
+        processedData.setReflectivityStd(
+                request.getReflectivityStd()
+        );
+
+        processedData.setReflectivityMedian(
+                request.getReflectivityMedian()
+        );
+
+        processedData.setReflectivityGe20Pct(
+                request.getReflectivityGe20Pct()
+        );
+
+        processedData.setReflectivityGe30Pct(
+                request.getReflectivityGe30Pct()
+        );
+
+        processedData.setReflectivityGe40Pct(
+                request.getReflectivityGe40Pct()
+        );
+
+        processedData.setRadarObservationCount(
+                request.getRadarObservationCount()
+        );
 
         processedData.setObservedAt(
                 request.getObservedAt()

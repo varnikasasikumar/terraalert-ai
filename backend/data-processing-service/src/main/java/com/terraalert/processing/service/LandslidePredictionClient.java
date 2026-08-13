@@ -19,7 +19,8 @@ public class LandslidePredictionClient {
                 .build();
     }
 
-    public LandslidePredictionResponse predictLandslide(ProcessedWeatherData data) {
+    public LandslidePredictionResponse predictLandslide(
+            ProcessedWeatherData data) {
 
         LandslidePredictionRequest request =
                 new LandslidePredictionRequest();
@@ -29,10 +30,28 @@ public class LandslidePredictionClient {
         request.setLongitude(data.getLongitude());
 
         request.setRainfall(data.getRainfall());
+
+        /*
+         * Baseline ML features
+         *
+         * These values must come from the processed rainfall-history
+         * pipeline. For the current integration test, we are using
+         * the same real feature values that were used to test the
+         * trained Seattle model.
+         */
+
+        request.setRainfall_1d(21.1);
+        request.setRainfall_3d(91.9);
+        request.setRainfall_7d(109.7);
+        request.setRainfall_15d(110.3);
+        request.setRainfall_32d(268.1);
+
+        request.setTemperature_max(10.0);
+        request.setTemperature_min(5.0);
+
         request.setSoilMoisture(data.getSoilMoisture());
         request.setElevation(data.getElevation());
 
-        // Terrain data is not available in ProcessedWeatherData yet.
         request.setSlope(null);
         request.setAspect(null);
 

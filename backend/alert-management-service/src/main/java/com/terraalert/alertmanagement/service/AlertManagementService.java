@@ -20,7 +20,7 @@ public class AlertManagementService {
         this.alertRepository = alertRepository;
     }
 
-    // CREATE ALERT
+    
     public AlertResponse createAlert(AlertRequest request) {
 
         Alert alert = new Alert();
@@ -39,7 +39,7 @@ public class AlertManagementService {
         return convertToResponse(savedAlert);
     }
 
-    // GET ALL ALERTS
+    
     public List<AlertResponse> getAllAlerts() {
 
         return alertRepository.findAll()
@@ -48,7 +48,7 @@ public class AlertManagementService {
                 .toList();
     }
 
-    // GET ALERT BY ID
+    
     public AlertResponse getAlertById(String id) {
 
         return alertRepository.findById(id)
@@ -56,7 +56,7 @@ public class AlertManagementService {
                 .orElse(null);
     }
 
-    // GET ALERTS BY STATUS
+    
     public List<AlertResponse> getAlertsByStatus(
             String status) {
 
@@ -66,7 +66,7 @@ public class AlertManagementService {
                 .toList();
     }
 
-    // GET ALERTS BY SEVERITY
+    
     public List<AlertResponse> getAlertsBySeverity(
             String severity) {
 
@@ -76,13 +76,13 @@ public class AlertManagementService {
                 .toList();
     }
 
-    // DELETE ALERT
+    
     public void deleteAlert(String id) {
 
         alertRepository.deleteById(id);
     }
 
-    // CONVERT MODEL → RESPONSE
+    
     private AlertResponse convertToResponse(Alert alert) {
 
         return new AlertResponse(

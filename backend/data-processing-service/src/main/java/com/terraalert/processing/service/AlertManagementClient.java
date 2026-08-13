@@ -27,7 +27,7 @@ public class AlertManagementClient {
 
         String overallRisk = riskResponse.getOverallRisk();
 
-        // Do not create an alert when there is no meaningful risk.
+        
         if (overallRisk == null ||
                 overallRisk.equalsIgnoreCase("UNKNOWN")) {
 

@@ -15,7 +15,7 @@ public class FloodPredictionClient {
     public FloodPredictionClient() {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8084")
+                .baseUrl("http://localhost:8090")
                 .build();
     }
 
@@ -35,6 +35,41 @@ public class FloodPredictionClient {
         request.setPressure(data.getPressure());
         request.setWindSpeed(data.getWindSpeed());
         request.setElevation(data.getElevation());
+        request.setReflectivityMean(
+                data.getReflectivityMean()
+        );
+
+        request.setReflectivityMax(
+                data.getReflectivityMax()
+        );
+
+        request.setReflectivityMin(
+                data.getReflectivityMin()
+        );
+
+        request.setReflectivityStd(
+                data.getReflectivityStd()
+        );
+
+        request.setReflectivityMedian(
+                data.getReflectivityMedian()
+        );
+
+        request.setReflectivityGe20Pct(
+                data.getReflectivityGe20Pct()
+        );
+
+        request.setReflectivityGe30Pct(
+                data.getReflectivityGe30Pct()
+        );
+
+        request.setReflectivityGe40Pct(
+                data.getReflectivityGe40Pct()
+        );
+
+        request.setRadarObservationCount(
+                data.getRadarObservationCount()
+        );
 
         // River-level data is not available yet.
         request.setRiverLevel(null);
@@ -42,7 +77,7 @@ public class FloodPredictionClient {
         request.setObservedAt(data.getObservedAt());
 
         return restClient.post()
-                .uri("/api/prediction/flood")
+                .uri("/api/predict/flood")
                 .body(request)
                 .retrieve()
                 .body(FloodPredictionResponse.class);

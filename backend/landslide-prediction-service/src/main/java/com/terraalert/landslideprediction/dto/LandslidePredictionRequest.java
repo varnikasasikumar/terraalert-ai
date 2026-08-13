@@ -17,7 +17,21 @@ public class LandslidePredictionRequest {
     private Double longitude;
 
     private Double rainfall;
+    
+    private Double rainfall_1d;
 
+    private Double rainfall_3d;
+
+    private Double rainfall_7d;
+
+    private Double rainfall_15d;
+
+    private Double rainfall_32d;
+
+    private Double temperature_max;
+
+    private Double temperature_min;
+    
     private Double soilMoisture;
 
     private Double elevation;
@@ -133,4 +147,61 @@ public class LandslidePredictionRequest {
     public void setObservedAt(LocalDateTime observedAt) {
         this.observedAt = observedAt;
     }
+    
+    public Double getRainfall_1d() {
+        return rainfall_1d;
+    }
+
+    public void setRainfall_1d(Double rainfall_1d) {
+        this.rainfall_1d = rainfall_1d;
+    }
+
+    public Double getRainfall_3d() {
+        return rainfall_3d;
+    }
+
+    public void setRainfall_3d(Double rainfall_3d) {
+        this.rainfall_3d = rainfall_3d;
+    }
+
+    public Double getRainfall_7d() {
+        return rainfall_7d;
+    }
+
+    public void setRainfall_7d(Double rainfall_7d) {
+        this.rainfall_7d = rainfall_7d;
+    }
+
+    public Double getRainfall_15d() {
+        return rainfall_15d;
+    }
+
+    public void setRainfall_15d(Double rainfall_15d) {
+        this.rainfall_15d = rainfall_15d;
+    }
+
+    public Double getRainfall_32d() {
+        return rainfall_32d;
+    }
+
+    public void setRainfall_32d(Double rainfall_32d) {
+        this.rainfall_32d = rainfall_32d;
+    }
+
+    public Double getTemperature_max() {
+        return temperature_max;
+    }
+
+    public void setTemperature_max(Double temperature_max) {
+        this.temperature_max = temperature_max;
+    }
+
+    public Double getTemperature_min() {
+        return temperature_min;
+    }
+
+    public void setTemperature_min(Double temperature_min) {
+        this.temperature_min = temperature_min;
+    }
+    
 }

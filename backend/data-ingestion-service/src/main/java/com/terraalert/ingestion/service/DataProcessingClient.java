@@ -18,11 +18,9 @@ public class DataProcessingClient {
                 .build();
     }
 
-    public String processWeatherData(
-            WeatherObservation observation) {
+    public String processWeatherData(WeatherObservation observation) {
 
-        WeatherProcessingRequest request =
-                new WeatherProcessingRequest();
+        WeatherProcessingRequest request =new WeatherProcessingRequest();
 
         request.setLocation(
                 observation.getLocation()

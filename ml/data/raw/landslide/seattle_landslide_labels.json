@@ -1,0 +1,1378 @@
+[
+    {
+        "date": "1978-03-20",
+        "landslide": 1
+    },
+    {
+        "date": "1978-03-30",
+        "landslide": 0
+    },
+    {
+        "date": "1978-05-13",
+        "landslide": 0
+    },
+    {
+        "date": "1978-07-05",
+        "landslide": 0
+    },
+    {
+        "date": "1978-09-25",
+        "landslide": 0
+    },
+    {
+        "date": "1978-11-03",
+        "landslide": 1
+    },
+    {
+        "date": "1978-12-05",
+        "landslide": 1
+    },
+    {
+        "date": "1978-12-17",
+        "landslide": 1
+    },
+    {
+        "date": "1979-02-06",
+        "landslide": 0
+    },
+    {
+        "date": "1979-05-07",
+        "landslide": 0
+    },
+    {
+        "date": "1979-06-01",
+        "landslide": 0
+    },
+    {
+        "date": "1979-07-25",
+        "landslide": 0
+    },
+    {
+        "date": "1979-08-26",
+        "landslide": 0
+    },
+    {
+        "date": "1979-08-31",
+        "landslide": 0
+    },
+    {
+        "date": "1979-12-15",
+        "landslide": 1
+    },
+    {
+        "date": "1979-12-17",
+        "landslide": 1
+    },
+    {
+        "date": "1979-12-18",
+        "landslide": 1
+    },
+    {
+        "date": "1979-12-27",
+        "landslide": 1
+    },
+    {
+        "date": "1979-12-28",
+        "landslide": 1
+    },
+    {
+        "date": "1980-01-12",
+        "landslide": 1
+    },
+    {
+        "date": "1980-02-08",
+        "landslide": 1
+    },
+    {
+        "date": "1980-02-28",
+        "landslide": 1
+    },
+    {
+        "date": "1980-03-12",
+        "landslide": 0
+    },
+    {
+        "date": "1980-04-04",
+        "landslide": 1
+    },
+    {
+        "date": "1980-04-21",
+        "landslide": 0
+    },
+    {
+        "date": "1980-04-28",
+        "landslide": 1
+    },
+    {
+        "date": "1980-05-13",
+        "landslide": 0
+    },
+    {
+        "date": "1980-10-05",
+        "landslide": 0
+    },
+    {
+        "date": "1980-11-07",
+        "landslide": 0
+    },
+    {
+        "date": "1980-12-03",
+        "landslide": 1
+    },
+    {
+        "date": "1980-12-31",
+        "landslide": 1
+    },
+    {
+        "date": "1981-02-08",
+        "landslide": 0
+    },
+    {
+        "date": "1981-03-13",
+        "landslide": 1
+    },
+    {
+        "date": "1981-03-17",
+        "landslide": 1
+    },
+    {
+        "date": "1981-03-26",
+        "landslide": 0
+    },
+    {
+        "date": "1981-05-14",
+        "landslide": 0
+    },
+    {
+        "date": "1981-05-20",
+        "landslide": 0
+    },
+    {
+        "date": "1981-06-19",
+        "landslide": 0
+    },
+    {
+        "date": "1981-10-18",
+        "landslide": 0
+    },
+    {
+        "date": "1981-10-19",
+        "landslide": 0
+    },
+    {
+        "date": "1981-11-04",
+        "landslide": 0
+    },
+    {
+        "date": "1982-01-18",
+        "landslide": 1
+    },
+    {
+        "date": "1982-02-09",
+        "landslide": 0
+    },
+    {
+        "date": "1982-02-10",
+        "landslide": 1
+    },
+    {
+        "date": "1982-02-19",
+        "landslide": 1
+    },
+    {
+        "date": "1982-02-20",
+        "landslide": 1
+    },
+    {
+        "date": "1982-03-05",
+        "landslide": 0
+    },
+    {
+        "date": "1982-03-12",
+        "landslide": 1
+    },
+    {
+        "date": "1982-05-10",
+        "landslide": 0
+    },
+    {
+        "date": "1982-06-09",
+        "landslide": 0
+    },
+    {
+        "date": "1982-06-25",
+        "landslide": 0
+    },
+    {
+        "date": "1982-08-13",
+        "landslide": 0
+    },
+    {
+        "date": "1982-10-22",
+        "landslide": 0
+    },
+    {
+        "date": "1982-11-11",
+        "landslide": 0
+    },
+    {
+        "date": "1982-11-16",
+        "landslide": 0
+    },
+    {
+        "date": "1982-12-03",
+        "landslide": 1
+    },
+    {
+        "date": "1982-12-15",
+        "landslide": 1
+    },
+    {
+        "date": "1982-12-18",
+        "landslide": 1
+    },
+    {
+        "date": "1982-12-21",
+        "landslide": 1
+    },
+    {
+        "date": "1983-01-04",
+        "landslide": 1
+    },
+    {
+        "date": "1983-01-05",
+        "landslide": 1
+    },
+    {
+        "date": "1983-01-06",
+        "landslide": 1
+    },
+    {
+        "date": "1983-01-19",
+        "landslide": 1
+    },
+    {
+        "date": "1983-01-27",
+        "landslide": 0
+    },
+    {
+        "date": "1983-02-18",
+        "landslide": 1
+    },
+    {
+        "date": "1983-03-11",
+        "landslide": 1
+    },
+    {
+        "date": "1983-03-23",
+        "landslide": 0
+    },
+    {
+        "date": "1983-04-20",
+        "landslide": 0
+    },
+    {
+        "date": "1983-04-23",
+        "landslide": 0
+    },
+    {
+        "date": "1983-04-28",
+        "landslide": 0
+    },
+    {
+        "date": "1983-06-11",
+        "landslide": 0
+    },
+    {
+        "date": "1983-09-25",
+        "landslide": 0
+    },
+    {
+        "date": "1983-11-04",
+        "landslide": 1
+    },
+    {
+        "date": "1983-11-11",
+        "landslide": 1
+    },
+    {
+        "date": "1983-11-24",
+        "landslide": 1
+    },
+    {
+        "date": "1983-11-30",
+        "landslide": 0
+    },
+    {
+        "date": "1983-12-09",
+        "landslide": 1
+    },
+    {
+        "date": "1983-12-10",
+        "landslide": 1
+    },
+    {
+        "date": "1983-12-11",
+        "landslide": 1
+    },
+    {
+        "date": "1983-12-12",
+        "landslide": 1
+    },
+    {
+        "date": "1983-12-13",
+        "landslide": 1
+    },
+    {
+        "date": "1983-12-20",
+        "landslide": 0
+    },
+    {
+        "date": "1983-12-30",
+        "landslide": 1
+    },
+    {
+        "date": "1984-01-17",
+        "landslide": 1
+    },
+    {
+        "date": "1984-02-03",
+        "landslide": 0
+    },
+    {
+        "date": "1984-02-24",
+        "landslide": 1
+    },
+    {
+        "date": "1984-03-07",
+        "landslide": 1
+    },
+    {
+        "date": "1984-04-10",
+        "landslide": 1
+    },
+    {
+        "date": "1984-05-09",
+        "landslide": 1
+    },
+    {
+        "date": "1984-05-15",
+        "landslide": 1
+    },
+    {
+        "date": "1984-07-10",
+        "landslide": 1
+    },
+    {
+        "date": "1984-07-21",
+        "landslide": 0
+    },
+    {
+        "date": "1984-08-02",
+        "landslide": 1
+    },
+    {
+        "date": "1984-08-11",
+        "landslide": 0
+    },
+    {
+        "date": "1984-08-12",
+        "landslide": 0
+    },
+    {
+        "date": "1984-10-04",
+        "landslide": 0
+    },
+    {
+        "date": "1984-12-08",
+        "landslide": 1
+    },
+    {
+        "date": "1984-12-28",
+        "landslide": 1
+    },
+    {
+        "date": "1985-03-19",
+        "landslide": 0
+    },
+    {
+        "date": "1985-05-01",
+        "landslide": 0
+    },
+    {
+        "date": "1985-05-04",
+        "landslide": 1
+    },
+    {
+        "date": "1985-06-15",
+        "landslide": 0
+    },
+    {
+        "date": "1985-07-09",
+        "landslide": 0
+    },
+    {
+        "date": "1985-07-15",
+        "landslide": 0
+    },
+    {
+        "date": "1985-08-09",
+        "landslide": 0
+    },
+    {
+        "date": "1985-08-27",
+        "landslide": 0
+    },
+    {
+        "date": "1985-09-09",
+        "landslide": 0
+    },
+    {
+        "date": "1985-10-07",
+        "landslide": 0
+    },
+    {
+        "date": "1986-01-13",
+        "landslide": 0
+    },
+    {
+        "date": "1986-01-15",
+        "landslide": 1
+    },
+    {
+        "date": "1986-01-17",
+        "landslide": 1
+    },
+    {
+        "date": "1986-01-18",
+        "landslide": 1
+    },
+    {
+        "date": "1986-01-19",
+        "landslide": 1
+    },
+    {
+        "date": "1986-01-23",
+        "landslide": 1
+    },
+    {
+        "date": "1986-01-24",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-07",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-10",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-13",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-19",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-20",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-24",
+        "landslide": 1
+    },
+    {
+        "date": "1986-02-27",
+        "landslide": 1
+    },
+    {
+        "date": "1986-03-11",
+        "landslide": 1
+    },
+    {
+        "date": "1986-03-17",
+        "landslide": 1
+    },
+    {
+        "date": "1986-03-19",
+        "landslide": 1
+    },
+    {
+        "date": "1986-03-21",
+        "landslide": 1
+    },
+    {
+        "date": "1986-06-03",
+        "landslide": 0
+    },
+    {
+        "date": "1986-11-23",
+        "landslide": 1
+    },
+    {
+        "date": "1987-01-13",
+        "landslide": 0
+    },
+    {
+        "date": "1987-02-02",
+        "landslide": 1
+    },
+    {
+        "date": "1987-02-11",
+        "landslide": 1
+    },
+    {
+        "date": "1987-03-03",
+        "landslide": 1
+    },
+    {
+        "date": "1987-03-12",
+        "landslide": 1
+    },
+    {
+        "date": "1987-03-26",
+        "landslide": 1
+    },
+    {
+        "date": "1987-03-30",
+        "landslide": 1
+    },
+    {
+        "date": "1987-05-06",
+        "landslide": 0
+    },
+    {
+        "date": "1987-05-07",
+        "landslide": 0
+    },
+    {
+        "date": "1987-06-13",
+        "landslide": 0
+    },
+    {
+        "date": "1987-10-28",
+        "landslide": 0
+    },
+    {
+        "date": "1987-11-21",
+        "landslide": 0
+    },
+    {
+        "date": "1987-12-05",
+        "landslide": 0
+    },
+    {
+        "date": "1987-12-18",
+        "landslide": 0
+    },
+    {
+        "date": "1988-01-31",
+        "landslide": 0
+    },
+    {
+        "date": "1988-03-26",
+        "landslide": 0
+    },
+    {
+        "date": "1988-04-06",
+        "landslide": 0
+    },
+    {
+        "date": "1988-04-11",
+        "landslide": 0
+    },
+    {
+        "date": "1988-04-24",
+        "landslide": 0
+    },
+    {
+        "date": "1988-06-09",
+        "landslide": 0
+    },
+    {
+        "date": "1988-08-24",
+        "landslide": 0
+    },
+    {
+        "date": "1988-09-12",
+        "landslide": 0
+    },
+    {
+        "date": "1988-11-10",
+        "landslide": 0
+    },
+    {
+        "date": "1988-11-13",
+        "landslide": 0
+    },
+    {
+        "date": "1988-11-29",
+        "landslide": 1
+    },
+    {
+        "date": "1989-03-03",
+        "landslide": 0
+    },
+    {
+        "date": "1989-03-12",
+        "landslide": 1
+    },
+    {
+        "date": "1989-03-27",
+        "landslide": 0
+    },
+    {
+        "date": "1989-05-30",
+        "landslide": 0
+    },
+    {
+        "date": "1989-06-01",
+        "landslide": 0
+    },
+    {
+        "date": "1989-06-29",
+        "landslide": 0
+    },
+    {
+        "date": "1989-07-20",
+        "landslide": 0
+    },
+    {
+        "date": "1989-09-16",
+        "landslide": 0
+    },
+    {
+        "date": "1989-12-07",
+        "landslide": 1
+    },
+    {
+        "date": "1990-01-09",
+        "landslide": 1
+    },
+    {
+        "date": "1990-01-10",
+        "landslide": 1
+    },
+    {
+        "date": "1990-03-05",
+        "landslide": 1
+    },
+    {
+        "date": "1990-03-24",
+        "landslide": 0
+    },
+    {
+        "date": "1990-04-04",
+        "landslide": 0
+    },
+    {
+        "date": "1990-04-22",
+        "landslide": 0
+    },
+    {
+        "date": "1990-04-28",
+        "landslide": 0
+    },
+    {
+        "date": "1990-05-01",
+        "landslide": 0
+    },
+    {
+        "date": "1990-05-30",
+        "landslide": 0
+    },
+    {
+        "date": "1990-06-02",
+        "landslide": 0
+    },
+    {
+        "date": "1990-06-14",
+        "landslide": 0
+    },
+    {
+        "date": "1990-07-20",
+        "landslide": 0
+    },
+    {
+        "date": "1990-10-12",
+        "landslide": 0
+    },
+    {
+        "date": "1990-11-27",
+        "landslide": 0
+    },
+    {
+        "date": "1990-11-29",
+        "landslide": 0
+    },
+    {
+        "date": "1990-12-02",
+        "landslide": 0
+    },
+    {
+        "date": "1990-12-31",
+        "landslide": 1
+    },
+    {
+        "date": "1991-02-06",
+        "landslide": 1
+    },
+    {
+        "date": "1991-04-05",
+        "landslide": 1
+    },
+    {
+        "date": "1991-04-12",
+        "landslide": 1
+    },
+    {
+        "date": "1991-06-08",
+        "landslide": 0
+    },
+    {
+        "date": "1991-07-22",
+        "landslide": 1
+    },
+    {
+        "date": "1991-08-10",
+        "landslide": 0
+    },
+    {
+        "date": "1991-08-15",
+        "landslide": 0
+    },
+    {
+        "date": "1991-11-04",
+        "landslide": 0
+    },
+    {
+        "date": "1992-01-30",
+        "landslide": 1
+    },
+    {
+        "date": "1992-04-02",
+        "landslide": 0
+    },
+    {
+        "date": "1992-06-10",
+        "landslide": 0
+    },
+    {
+        "date": "1992-07-28",
+        "landslide": 0
+    },
+    {
+        "date": "1992-08-10",
+        "landslide": 0
+    },
+    {
+        "date": "1992-09-24",
+        "landslide": 1
+    },
+    {
+        "date": "1992-12-31",
+        "landslide": 0
+    },
+    {
+        "date": "1993-01-03",
+        "landslide": 0
+    },
+    {
+        "date": "1993-07-23",
+        "landslide": 0
+    },
+    {
+        "date": "1993-09-20",
+        "landslide": 0
+    },
+    {
+        "date": "1993-09-21",
+        "landslide": 0
+    },
+    {
+        "date": "1993-11-21",
+        "landslide": 0
+    },
+    {
+        "date": "1994-05-25",
+        "landslide": 0
+    },
+    {
+        "date": "1994-07-25",
+        "landslide": 0
+    },
+    {
+        "date": "1994-09-07",
+        "landslide": 0
+    },
+    {
+        "date": "1994-09-12",
+        "landslide": 0
+    },
+    {
+        "date": "1994-09-29",
+        "landslide": 1
+    },
+    {
+        "date": "1994-09-30",
+        "landslide": 0
+    },
+    {
+        "date": "1994-10-30",
+        "landslide": 0
+    },
+    {
+        "date": "1994-12-21",
+        "landslide": 1
+    },
+    {
+        "date": "1995-01-27",
+        "landslide": 0
+    },
+    {
+        "date": "1995-02-19",
+        "landslide": 1
+    },
+    {
+        "date": "1995-03-22",
+        "landslide": 0
+    },
+    {
+        "date": "1995-03-30",
+        "landslide": 0
+    },
+    {
+        "date": "1995-06-05",
+        "landslide": 1
+    },
+    {
+        "date": "1995-06-14",
+        "landslide": 0
+    },
+    {
+        "date": "1995-06-29",
+        "landslide": 0
+    },
+    {
+        "date": "1995-07-07",
+        "landslide": 0
+    },
+    {
+        "date": "1995-07-10",
+        "landslide": 0
+    },
+    {
+        "date": "1995-08-04",
+        "landslide": 0
+    },
+    {
+        "date": "1995-08-25",
+        "landslide": 1
+    },
+    {
+        "date": "1995-09-26",
+        "landslide": 0
+    },
+    {
+        "date": "1995-11-11",
+        "landslide": 1
+    },
+    {
+        "date": "1995-12-15",
+        "landslide": 1
+    },
+    {
+        "date": "1995-12-27",
+        "landslide": 1
+    },
+    {
+        "date": "1996-02-08",
+        "landslide": 1
+    },
+    {
+        "date": "1996-02-09",
+        "landslide": 1
+    },
+    {
+        "date": "1996-02-10",
+        "landslide": 1
+    },
+    {
+        "date": "1996-02-12",
+        "landslide": 1
+    },
+    {
+        "date": "1996-02-16",
+        "landslide": 1
+    },
+    {
+        "date": "1996-02-26",
+        "landslide": 1
+    },
+    {
+        "date": "1996-03-08",
+        "landslide": 1
+    },
+    {
+        "date": "1996-04-01",
+        "landslide": 0
+    },
+    {
+        "date": "1996-04-23",
+        "landslide": 1
+    },
+    {
+        "date": "1996-05-27",
+        "landslide": 0
+    },
+    {
+        "date": "1996-06-02",
+        "landslide": 0
+    },
+    {
+        "date": "1996-07-01",
+        "landslide": 0
+    },
+    {
+        "date": "1996-12-29",
+        "landslide": 1
+    },
+    {
+        "date": "1996-12-31",
+        "landslide": 1
+    },
+    {
+        "date": "1997-01-01",
+        "landslide": 1
+    },
+    {
+        "date": "1997-01-02",
+        "landslide": 1
+    },
+    {
+        "date": "1997-01-03",
+        "landslide": 1
+    },
+    {
+        "date": "1997-01-04",
+        "landslide": 1
+    },
+    {
+        "date": "1997-01-19",
+        "landslide": 1
+    },
+    {
+        "date": "1997-02-13",
+        "landslide": 1
+    },
+    {
+        "date": "1997-03-18",
+        "landslide": 1
+    },
+    {
+        "date": "1997-03-19",
+        "landslide": 1
+    },
+    {
+        "date": "1997-03-20",
+        "landslide": 1
+    },
+    {
+        "date": "1997-03-23",
+        "landslide": 1
+    },
+    {
+        "date": "1997-04-02",
+        "landslide": 1
+    },
+    {
+        "date": "1997-05-11",
+        "landslide": 0
+    },
+    {
+        "date": "1997-06-19",
+        "landslide": 0
+    },
+    {
+        "date": "1997-06-23",
+        "landslide": 0
+    },
+    {
+        "date": "1997-07-01",
+        "landslide": 0
+    },
+    {
+        "date": "1997-07-09",
+        "landslide": 0
+    },
+    {
+        "date": "1997-10-04",
+        "landslide": 0
+    },
+    {
+        "date": "1997-10-30",
+        "landslide": 1
+    },
+    {
+        "date": "1997-11-26",
+        "landslide": 1
+    },
+    {
+        "date": "1997-12-31",
+        "landslide": 1
+    },
+    {
+        "date": "1998-01-14",
+        "landslide": 1
+    },
+    {
+        "date": "1998-01-20",
+        "landslide": 0
+    },
+    {
+        "date": "1998-01-25",
+        "landslide": 1
+    },
+    {
+        "date": "1998-02-13",
+        "landslide": 1
+    },
+    {
+        "date": "1998-03-17",
+        "landslide": 0
+    },
+    {
+        "date": "1998-09-15",
+        "landslide": 0
+    },
+    {
+        "date": "1998-10-23",
+        "landslide": 0
+    },
+    {
+        "date": "1998-11-23",
+        "landslide": 0
+    },
+    {
+        "date": "1998-11-25",
+        "landslide": 1
+    },
+    {
+        "date": "1998-11-29",
+        "landslide": 0
+    },
+    {
+        "date": "1999-01-13",
+        "landslide": 1
+    },
+    {
+        "date": "1999-01-28",
+        "landslide": 1
+    },
+    {
+        "date": "1999-01-30",
+        "landslide": 1
+    },
+    {
+        "date": "1999-02-20",
+        "landslide": 1
+    },
+    {
+        "date": "1999-02-24",
+        "landslide": 1
+    },
+    {
+        "date": "1999-02-25",
+        "landslide": 1
+    },
+    {
+        "date": "1999-02-26",
+        "landslide": 1
+    },
+    {
+        "date": "1999-02-28",
+        "landslide": 0
+    },
+    {
+        "date": "1999-03-10",
+        "landslide": 0
+    },
+    {
+        "date": "1999-04-12",
+        "landslide": 1
+    },
+    {
+        "date": "1999-04-26",
+        "landslide": 0
+    },
+    {
+        "date": "1999-07-30",
+        "landslide": 0
+    },
+    {
+        "date": "1999-10-27",
+        "landslide": 1
+    },
+    {
+        "date": "1999-11-10",
+        "landslide": 1
+    },
+    {
+        "date": "1999-11-28",
+        "landslide": 0
+    },
+    {
+        "date": "1999-12-02",
+        "landslide": 1
+    },
+    {
+        "date": "1999-12-16",
+        "landslide": 1
+    },
+    {
+        "date": "2000-01-12",
+        "landslide": 1
+    },
+    {
+        "date": "2000-02-15",
+        "landslide": 1
+    },
+    {
+        "date": "2000-03-16",
+        "landslide": 1
+    },
+    {
+        "date": "2000-03-28",
+        "landslide": 1
+    },
+    {
+        "date": "2000-05-27",
+        "landslide": 0
+    },
+    {
+        "date": "2000-07-09",
+        "landslide": 0
+    },
+    {
+        "date": "2000-08-21",
+        "landslide": 1
+    },
+    {
+        "date": "2000-09-28",
+        "landslide": 0
+    },
+    {
+        "date": "2000-12-31",
+        "landslide": 0
+    },
+    {
+        "date": "2001-01-22",
+        "landslide": 0
+    },
+    {
+        "date": "2001-02-28",
+        "landslide": 1
+    },
+    {
+        "date": "2001-04-11",
+        "landslide": 0
+    },
+    {
+        "date": "2001-05-19",
+        "landslide": 0
+    },
+    {
+        "date": "2001-06-19",
+        "landslide": 0
+    },
+    {
+        "date": "2001-10-28",
+        "landslide": 0
+    },
+    {
+        "date": "2001-11-02",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-14",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-15",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-19",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-21",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-23",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-25",
+        "landslide": 1
+    },
+    {
+        "date": "2001-11-26",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-03",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-05",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-13",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-16",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-18",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-19",
+        "landslide": 1
+    },
+    {
+        "date": "2001-12-20",
+        "landslide": 1
+    },
+    {
+        "date": "2002-01-08",
+        "landslide": 1
+    },
+    {
+        "date": "2002-01-10",
+        "landslide": 1
+    },
+    {
+        "date": "2002-01-15",
+        "landslide": 1
+    },
+    {
+        "date": "2002-01-19",
+        "landslide": 1
+    },
+    {
+        "date": "2002-01-25",
+        "landslide": 1
+    },
+    {
+        "date": "2002-01-31",
+        "landslide": 1
+    },
+    {
+        "date": "2002-05-03",
+        "landslide": 0
+    },
+    {
+        "date": "2002-05-09",
+        "landslide": 1
+    },
+    {
+        "date": "2002-05-20",
+        "landslide": 1
+    },
+    {
+        "date": "2002-05-29",
+        "landslide": 0
+    },
+    {
+        "date": "2002-06-18",
+        "landslide": 0
+    },
+    {
+        "date": "2002-07-26",
+        "landslide": 0
+    },
+    {
+        "date": "2002-08-19",
+        "landslide": 0
+    },
+    {
+        "date": "2002-09-22",
+        "landslide": 0
+    },
+    {
+        "date": "2002-10-04",
+        "landslide": 0
+    },
+    {
+        "date": "2002-11-06",
+        "landslide": 0
+    },
+    {
+        "date": "2002-11-11",
+        "landslide": 0
+    },
+    {
+        "date": "2002-11-13",
+        "landslide": 0
+    },
+    {
+        "date": "2002-11-23",
+        "landslide": 1
+    },
+    {
+        "date": "2003-02-13",
+        "landslide": 0
+    },
+    {
+        "date": "2003-02-20",
+        "landslide": 0
+    },
+    {
+        "date": "2003-03-22",
+        "landslide": 1
+    },
+    {
+        "date": "2003-05-04",
+        "landslide": 0
+    },
+    {
+        "date": "2003-06-10",
+        "landslide": 0
+    },
+    {
+        "date": "2003-06-30",
+        "landslide": 0
+    },
+    {
+        "date": "2003-08-30",
+        "landslide": 0
+    },
+    {
+        "date": "2003-10-20",
+        "landslide": 1
+    },
+    {
+        "date": "2003-10-21",
+        "landslide": 1
+    },
+    {
+        "date": "2003-11-10",
+        "landslide": 0
+    },
+    {
+        "date": "2003-11-12",
+        "landslide": 0
+    },
+    {
+        "date": "2003-11-19",
+        "landslide": 1
+    }
+]
