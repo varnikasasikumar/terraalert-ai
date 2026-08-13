@@ -15,7 +15,7 @@ public class FloodPredictionClient {
     public FloodPredictionClient() {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8090")
+                .baseUrl("http://localhost:8084")
                 .build();
     }
 
@@ -77,7 +77,7 @@ public class FloodPredictionClient {
         request.setObservedAt(data.getObservedAt());
 
         return restClient.post()
-                .uri("/api/predict/flood")
+                .uri("/api/prediction/flood")
                 .body(request)
                 .retrieve()
                 .body(FloodPredictionResponse.class);
