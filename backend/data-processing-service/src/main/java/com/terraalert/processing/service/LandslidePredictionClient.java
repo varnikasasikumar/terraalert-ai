@@ -7,15 +7,18 @@ import com.terraalert.processing.dto.LandslidePredictionRequest;
 import com.terraalert.processing.model.ProcessedWeatherData;
 import com.terraalert.processing.dto.LandslidePredictionResponse;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @Component
 public class LandslidePredictionClient {
 
     private final RestClient restClient;
 
-    public LandslidePredictionClient() {
+    public LandslidePredictionClient(
+            @Value("${landslide-prediction.service.url:http://localhost:8085}") String baseUrl) {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8085")
+                .baseUrl(baseUrl)
                 .build();
     }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Shield, Eye, EyeOff, Lock } from "lucide-react";
 import { useApp } from "../context/AppContext";
+import { API_BASE_URL } from "../api/service";
 
 export const LoginScreen: React.FC = () => {
   const { login, setSelectedDistrict } = useApp();
@@ -28,7 +29,7 @@ export const LoginScreen: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8089/api/auth/login", {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
 
         headers: {

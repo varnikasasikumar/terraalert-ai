@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.JdkClientHttpRequestFactory;
 import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
@@ -19,13 +20,14 @@ public class FloodPredictionService {
 
     private final RestClient restClient;
 
-    public FloodPredictionService() {
+    public FloodPredictionService(
+            @Value("${flood.ml.service.url:http://localhost:5002}") String baseUrl) {
         HttpClient httpClient = HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_1_1)
         		.build();
 
         this.restClient = RestClient.builder()
-                .baseUrl("http://localhost:5002")
+                .baseUrl(baseUrl)
                 .requestFactory(new JdkClientHttpRequestFactory(httpClient))
                 .messageConverters(converters ->
                         converters.add(0, new JacksonJsonHttpMessageConverter()))

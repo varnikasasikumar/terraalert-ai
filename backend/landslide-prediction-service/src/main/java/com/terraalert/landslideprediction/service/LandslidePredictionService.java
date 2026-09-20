@@ -2,6 +2,7 @@ package com.terraalert.landslideprediction.service;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -15,11 +16,12 @@ public class LandslidePredictionService {
 
     private final RestClient restClient;
 
-    public LandslidePredictionService() {
+    public LandslidePredictionService(
+            @Value("${landslide.ml.service.url:http://localhost:5001}") String baseUrl) {
 
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:5001")
+                .baseUrl(baseUrl)
                 .build();
     }
 

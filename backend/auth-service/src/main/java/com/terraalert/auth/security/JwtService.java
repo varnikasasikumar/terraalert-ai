@@ -11,22 +11,20 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @Service
 public class JwtService {
-
-    // Temporary development secret.
-    // We will move this to environment variables later.
-    private static final String SECRET =
-            "TerraAlertAISecretKeyForJWTAuthentication2026Secure";
 
     private static final long EXPIRATION_TIME =
             1000 * 60 * 60; // 1 hour
 
     private final SecretKey secretKey;
 
-    public JwtService() {
+    public JwtService(
+            @Value("${jwt.secret:TerraAlertAISecretKeyForJWTAuthentication2026Secure}") String secret) {
         this.secretKey = Keys.hmacShaKeyFor(
-                SECRET.getBytes(StandardCharsets.UTF_8)
+                secret.getBytes(StandardCharsets.UTF_8)
         );
     }
 

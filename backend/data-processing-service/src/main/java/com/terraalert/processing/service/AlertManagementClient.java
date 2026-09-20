@@ -2,6 +2,7 @@ package com.terraalert.processing.service;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -14,10 +15,11 @@ public class AlertManagementClient {
 
     private final RestClient restClient;
 
-    public AlertManagementClient() {
+    public AlertManagementClient(
+            @Value("${alert-management.service.url:http://localhost:8087}") String baseUrl) {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8087")
+                .baseUrl(baseUrl)
                 .build();
     }
 

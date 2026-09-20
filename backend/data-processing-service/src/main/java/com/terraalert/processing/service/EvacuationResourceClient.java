@@ -1,5 +1,6 @@
 package com.terraalert.processing.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -12,10 +13,11 @@ public class EvacuationResourceClient {
 
     private final RestClient restClient;
 
-    public EvacuationResourceClient() {
+    public EvacuationResourceClient(
+            @Value("${evacuation-resource.service.url:http://localhost:8088}") String baseUrl) {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8088")
+                .baseUrl(baseUrl)
                 .build();
     }
 

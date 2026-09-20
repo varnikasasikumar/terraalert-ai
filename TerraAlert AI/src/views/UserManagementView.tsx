@@ -28,11 +28,7 @@ interface UserData {
 
 type SubTab = "Users" | "Roles & Permissions" | "Audit Logs";
 
-// =========================================================
-// API CONFIGURATION
-// =========================================================
-
-const API_BASE_URL = "http://localhost:8089";
+import { API_BASE_URL } from "../api/service";
 
 // =========================================================
 // HELPER - GET JWT TOKEN
@@ -72,7 +68,11 @@ const apiRequest = async (
     throw new Error("Authentication token not found. Please login again.");
   }
 
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+  const cleanEndpoint = endpoint.startsWith("/api")
+    ? endpoint.substring(4)
+    : endpoint;
+
+  const response = await fetch(`${API_BASE_URL}${cleanEndpoint}`, {
     ...options,
     headers: {
       "Content-Type": "application/json",

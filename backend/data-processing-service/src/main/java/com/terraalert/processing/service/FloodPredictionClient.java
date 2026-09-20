@@ -7,15 +7,18 @@ import com.terraalert.processing.dto.FloodPredictionRequest;
 import com.terraalert.processing.model.ProcessedWeatherData;
 import com.terraalert.processing.dto.FloodPredictionResponse;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @Component
 public class FloodPredictionClient {
 
     private final RestClient restClient;
 
-    public FloodPredictionClient() {
+    public FloodPredictionClient(
+            @Value("${flood-prediction.service.url:http://localhost:8084}") String baseUrl) {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8084")
+                .baseUrl(baseUrl)
                 .build();
     }
 

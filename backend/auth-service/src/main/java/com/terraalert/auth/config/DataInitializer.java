@@ -11,13 +11,16 @@ import com.terraalert.auth.model.Role;
 import com.terraalert.auth.model.User;
 import com.terraalert.auth.repository.UserRepository;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @Configuration
 public class DataInitializer {
 
     @Bean
     CommandLineRunner initializeAdmin(
             UserRepository userRepository,
-            PasswordEncoder passwordEncoder) {
+            PasswordEncoder passwordEncoder,
+            @Value("${admin.initial.password:admin123}") String initialPassword) {
 
         return args -> {
 
@@ -28,7 +31,7 @@ public class DataInitializer {
                 admin.setUsername("admin");
                 admin.setEmail("admin@terraalert.com");
                 admin.setPassword(
-                        passwordEncoder.encode("admin123")
+                        passwordEncoder.encode(initialPassword)
                 );
                 admin.setFullName("System Administrator");
                 admin.setRole(Role.ADMIN);

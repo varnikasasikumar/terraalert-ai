@@ -6,15 +6,18 @@ import org.springframework.web.client.RestClient;
 import com.terraalert.ingestion.dto.WeatherProcessingRequest;
 import com.terraalert.ingestion.model.WeatherObservation;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @Component
 public class DataProcessingClient {
 
     private final RestClient restClient;
 
-    public DataProcessingClient() {
+    public DataProcessingClient(
+            @Value("${data-processing.service.url:http://localhost:8083}") String baseUrl) {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://127.0.0.1:8083")
+                .baseUrl(baseUrl)
                 .build();
     }
 

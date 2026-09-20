@@ -1,5 +1,6 @@
 package com.terraalert.processing.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -12,10 +13,11 @@ public class RiskAssessmentClient {
 
     private final RestClient restClient;
 
-    public RiskAssessmentClient() {
+    public RiskAssessmentClient(
+            @Value("${risk-assessment.service.url:http://localhost:8086}") String baseUrl) {
         this.restClient = RestClient
                 .builder()
-                .baseUrl("http://localhost:8086")
+                .baseUrl(baseUrl)
                 .build();
     }
 
