@@ -10,9 +10,9 @@ public class RiskAssessmentResponse {
 
     private double longitude;
 
-    private double floodProbability;
+    private Double floodProbability;
 
-    private double landslideProbability;
+    private Double landslideProbability;
 
     private String floodRisk;
 
@@ -29,8 +29,8 @@ public class RiskAssessmentResponse {
             String location,
             double latitude,
             double longitude,
-            double floodProbability,
-            double landslideProbability,
+            Double floodProbability,
+            Double landslideProbability,
             String floodRisk,
             String landslideRisk,
             String overallRisk,
@@ -71,19 +71,19 @@ public class RiskAssessmentResponse {
         this.longitude = longitude;
     }
 
-    public double getFloodProbability() {
+    public Double getFloodProbability() {
         return floodProbability;
     }
 
-    public void setFloodProbability(double floodProbability) {
+    public void setFloodProbability(Double floodProbability) {
         this.floodProbability = floodProbability;
     }
 
-    public double getLandslideProbability() {
+    public Double getLandslideProbability() {
         return landslideProbability;
     }
 
-    public void setLandslideProbability(double landslideProbability) {
+    public void setLandslideProbability(Double landslideProbability) {
         this.landslideProbability = landslideProbability;
     }
 

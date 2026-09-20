@@ -1,7 +1,7 @@
 package com.terraalert.processing.exception;
 
-import java.time.LocalDateTime;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,32 +9,56 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.terraalert.processing.dto.ValidationErrorResponse;
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ValidationErrorResponse> handleValidationException(
-            MethodArgumentNotValidException exception) {
+    public ResponseEntity<Map<String, Object>> handleValidation(
+            MethodArgumentNotValidException ex) {
 
-        String message = exception.getBindingResult()
+        Map<String, Object> response =
+                new HashMap<>();
+
+        response.put("error", "Validation failed");
+
+        Map<String, String> fields =
+                new HashMap<>();
+
+        ex.getBindingResult()
                 .getFieldErrors()
-                .stream()
-                .map(error ->
-                        error.getField() + ": " + error.getDefaultMessage())
-                .collect(Collectors.joining(", "));
-
-        ValidationErrorResponse response =
-                new ValidationErrorResponse(
-                        LocalDateTime.now(),
-                        HttpStatus.BAD_REQUEST.value(),
-                        "Validation Failed",
-                        message
+                .forEach(error ->
+                        fields.put(
+                                error.getField(),
+                                error.getDefaultMessage()
+                        )
                 );
+
+        response.put("fields", fields);
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
+                .body(response);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, Object>> handleException(
+            Exception ex) {
+
+        Map<String, Object> response =
+                new HashMap<>();
+
+        response.put(
+                "error",
+                ex.getClass().getSimpleName()
+        );
+
+        response.put(
+                "message",
+                ex.getMessage()
+        );
+
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(response);
     }
 }

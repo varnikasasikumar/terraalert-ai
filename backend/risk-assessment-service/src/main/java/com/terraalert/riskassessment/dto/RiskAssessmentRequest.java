@@ -14,10 +14,8 @@ public class RiskAssessmentRequest {
     @NotNull(message = "Longitude is required")
     private Double longitude;
 
-    @NotNull(message = "Flood probability is required")
     private Double floodProbability;
 
-    @NotNull(message = "Landslide probability is required")
     private Double landslideProbability;
 
     public RiskAssessmentRequest() {

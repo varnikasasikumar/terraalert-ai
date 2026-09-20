@@ -26,11 +26,28 @@ public class WeatherProcessingRequest {
 
     private Double pressure;
 
-    private Double soilMoisture;
-
-    private Double elevation;
+     private Double soilMoisture;
     
-    private Double reflectivityMean;
+ // =========================================================
+ // LANDSLIDE FEATURES
+ // =========================================================
+
+ private java.util.List<String> dailyDates;
+
+ private java.util.List<Double> past32DaysRainfall;
+
+ private java.util.List<Double> dailyTemperatureMax;
+
+ private java.util.List<Double> dailyTemperatureMin;
+
+ private Double slope;
+
+ private Double aspect;
+ 
+ private Double elevation;
+ 
+ 
+ private Double reflectivityMean;
     private Double reflectivityMax;
     private Double reflectivityMin;
     private Double reflectivityStd;
@@ -46,6 +63,8 @@ public class WeatherProcessingRequest {
     private LocalDateTime observedAt;
 
     private String source;
+
+    private String predictionTarget;
 
     public WeatherProcessingRequest() {
     }
@@ -217,4 +236,64 @@ public class WeatherProcessingRequest {
     public void setRadarObservationCount(Integer radarObservationCount) {
         this.radarObservationCount = radarObservationCount;
     }
+    
+ // =========================================================
+ // LANDSLIDE FEATURE GETTERS / SETTERS
+ // =========================================================
+
+ public java.util.List<String> getDailyDates() {
+     return dailyDates;
+ }
+
+ public void setDailyDates(java.util.List<String> dailyDates) {
+     this.dailyDates = dailyDates;
+ }
+
+ public java.util.List<Double> getPast32DaysRainfall() {
+     return past32DaysRainfall;
+ }
+
+ public void setPast32DaysRainfall(java.util.List<Double> past32DaysRainfall) {
+     this.past32DaysRainfall = past32DaysRainfall;
+ }
+
+ public java.util.List<Double> getDailyTemperatureMax() {
+     return dailyTemperatureMax;
+ }
+
+ public void setDailyTemperatureMax(java.util.List<Double> dailyTemperatureMax) {
+     this.dailyTemperatureMax = dailyTemperatureMax;
+ }
+
+ public java.util.List<Double> getDailyTemperatureMin() {
+     return dailyTemperatureMin;
+ }
+
+ public void setDailyTemperatureMin(java.util.List<Double> dailyTemperatureMin) {
+     this.dailyTemperatureMin = dailyTemperatureMin;
+ }
+
+ public Double getSlope() {
+     return slope;
+ }
+
+ public void setSlope(Double slope) {
+     this.slope = slope;
+ }
+
+ public Double getAspect() {
+     return aspect;
+ }
+
+ public void setAspect(Double aspect) {
+     this.aspect = aspect;
+ }
+
+ public String getPredictionTarget() {
+     return predictionTarget;
+ }
+
+ public void setPredictionTarget(String predictionTarget) {
+     this.predictionTarget = predictionTarget;
+ }
 }

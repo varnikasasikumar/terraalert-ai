@@ -1,9 +1,13 @@
 package com.terraalert.floodprediction.service;
 
+import java.net.http.HttpClient;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.MediaType;
+import org.springframework.http.client.JdkClientHttpRequestFactory;
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -16,9 +20,15 @@ public class FloodPredictionService {
     private final RestClient restClient;
 
     public FloodPredictionService() {
-        this.restClient = RestClient
-                .builder()
+        HttpClient httpClient = HttpClient.newBuilder()
+                .version(HttpClient.Version.HTTP_1_1)
+        		.build();
+
+        this.restClient = RestClient.builder()
                 .baseUrl("http://localhost:5002")
+                .requestFactory(new JdkClientHttpRequestFactory(httpClient))
+                .messageConverters(converters ->
+                        converters.add(0, new JacksonJsonHttpMessageConverter()))
                 .build();
     }
 
@@ -108,6 +118,7 @@ public class FloodPredictionService {
         Map<String, Object> mlResponse =
                 restClient.post()
                         .uri("/api/predict/flood")
+                        .contentType(MediaType.APPLICATION_JSON)
                         .body(mlRequest)
                         .retrieve()
                         .body(Map.class);

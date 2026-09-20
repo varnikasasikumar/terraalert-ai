@@ -17,35 +17,66 @@ public class WeatherIngestionScheduler {
     }
 
     @Scheduled(fixedRateString = "${weather.ingestion.interval}")
-    public void ingestHoustonWeather() {
+    public void ingestHistoricalScenarios() {
+
+        // ----------------------------------------------------
+        // 1. HOUSTON FLOOD HISTORICAL SCENARIO (predictionTarget = FLOOD)
+        // ----------------------------------------------------
 
         double latitude = 29.7604;
         double longitude = -95.3698;
         String location = "Houston";
+        String startDate = "2017-07-26";
+        String endDate = "2017-08-26";
 
-        IngestionResult result =
-                weatherIngestionService.ingestCurrentWeather(
+        IngestionResult floodResult =
+                weatherIngestionService.ingestHistoricalWeather(
                         latitude,
                         longitude,
-                        location
+                        location,
+                        startDate,
+                        endDate,
+                        "FLOOD"
                 );
 
-        if (result.isCreated()) {
-
+        if (floodResult.isCreated()) {
             System.out.println(
-                    "New weather data ingested for "
-                    + result.getObservation().getLocation()
+                    "=== FLOOD HISTORICAL INGESTION ===\n"
+                    + "New flood historical data ingested for "
+                    + floodResult.getObservation().getLocation()
                     + " at "
-                    + result.getObservation().getObservedAt()
+                    + floodResult.getObservation().getObservedAt()
+                    + " (Target: FLOOD)"
             );
-
         } else {
-
             System.out.println(
-                    "Duplicate weather data skipped for "
-                    + result.getObservation().getLocation()
+                    "=== FLOOD HISTORICAL INGESTION ===\n"
+                    + "Duplicate flood historical data skipped for "
+                    + floodResult.getObservation().getLocation()
+            );
+        }
+
+        // ----------------------------------------------------
+        // 2. SEATTLE LANDSLIDE HISTORICAL SCENARIO (predictionTarget = LANDSLIDE)
+        // ----------------------------------------------------
+
+        IngestionResult landslideResult =
+                weatherIngestionService.ingestSeattleLandslideHistoricalWeather();
+
+        if (landslideResult.isCreated()) {
+            System.out.println(
+                    "=== LANDSLIDE HISTORICAL INGESTION ===\n"
+                    + "New landslide historical data ingested for "
+                    + landslideResult.getObservation().getLocation()
                     + " at "
-                    + result.getObservation().getObservedAt()
+                    + landslideResult.getObservation().getObservedAt()
+                    + " (Target: LANDSLIDE)"
+            );
+        } else {
+            System.out.println(
+                    "=== LANDSLIDE HISTORICAL INGESTION ===\n"
+                    + "Duplicate landslide historical data skipped for "
+                    + landslideResult.getObservation().getLocation()
             );
         }
     }

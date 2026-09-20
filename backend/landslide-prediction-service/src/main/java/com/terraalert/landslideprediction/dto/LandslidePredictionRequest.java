@@ -7,14 +7,11 @@ import jakarta.validation.constraints.NotNull;
 
 public class LandslidePredictionRequest {
 
-    @NotBlank(message = "Location is required")
-    private String location;
+    private String location = "Selected Location";
 
-    @NotNull(message = "Latitude is required")
-    private Double latitude;
+    private Double latitude = 0.0;
 
-    @NotNull(message = "Longitude is required")
-    private Double longitude;
+    private Double longitude = 0.0;
 
     private Double rainfall;
     
@@ -46,8 +43,7 @@ public class LandslidePredictionRequest {
 
     private Double windSpeed;
 
-    @NotNull(message = "Observed time is required")
-    private LocalDateTime observedAt;
+    private LocalDateTime observedAt = LocalDateTime.now();
 
     public LandslidePredictionRequest() {
     }

@@ -15,4 +15,11 @@ public interface WeatherObservationRepository
             LocalDateTime observedAt,
             String source
     );
+
+    Optional<WeatherObservation> findByLocationAndObservedAtAndSourceAndPredictionTarget(
+            String location,
+            LocalDateTime observedAt,
+            String source,
+            String predictionTarget
+    );
 }

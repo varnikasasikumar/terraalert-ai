@@ -13,17 +13,19 @@ public class RiskAssessmentService {
 	public RiskAssessmentResponse assessRisk(
 	        RiskAssessmentRequest request) {
 
-	    double floodProbability =
+	    Double floodProbability =
 	            request.getFloodProbability();
 
-	    double landslideProbability =
+	    Double landslideProbability =
 	            request.getLandslideProbability();
 
 	    String floodRisk;
 	    String landslideRisk;
 	    String overallRisk;
 
-	    if (floodProbability >= 0.75) {
+	    if (floodProbability == null) {
+	        floodRisk = "UNKNOWN";
+	    } else if (floodProbability >= 0.75) {
 	        floodRisk = "HIGH";
 	    } else if (floodProbability >= 0.50) {
 	        floodRisk = "MEDIUM";
@@ -31,7 +33,9 @@ public class RiskAssessmentService {
 	        floodRisk = "LOW";
 	    }
 
-	    if (landslideProbability >= 0.75) {
+	    if (landslideProbability == null) {
+	        landslideRisk = "UNKNOWN";
+	    } else if (landslideProbability >= 0.75) {
 	        landslideRisk = "HIGH";
 	    } else if (landslideProbability >= 0.50) {
 	        landslideRisk = "MEDIUM";
@@ -39,19 +43,14 @@ public class RiskAssessmentService {
 	        landslideRisk = "LOW";
 	    }
 
-	    if (floodRisk.equals("HIGH")
-	            || landslideRisk.equals("HIGH")) {
-
+	    if (floodRisk.equals("HIGH") || landslideRisk.equals("HIGH")) {
 	        overallRisk = "HIGH";
-
-	    } else if (floodRisk.equals("MEDIUM")
-	            || landslideRisk.equals("MEDIUM")) {
-
+	    } else if (floodRisk.equals("MEDIUM") || landslideRisk.equals("MEDIUM")) {
 	        overallRisk = "MEDIUM";
-
-	    } else {
-
+	    } else if (floodRisk.equals("LOW") || landslideRisk.equals("LOW")) {
 	        overallRisk = "LOW";
+	    } else {
+	        overallRisk = "UNKNOWN";
 	    }
 
 	    return new RiskAssessmentResponse(

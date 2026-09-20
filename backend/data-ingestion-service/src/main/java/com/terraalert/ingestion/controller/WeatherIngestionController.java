@@ -113,4 +113,27 @@ public class WeatherIngestionController {
 
         return ResponseEntity.ok(result.getObservation());
     }
+    
+    @PostMapping("/historical")
+    public ResponseEntity<WeatherObservation> ingestHistoricalWeather(
+            @RequestParam double latitude,
+            @RequestParam double longitude,
+            @RequestParam String location,
+            @RequestParam String startDate,
+            @RequestParam String endDate) {
+
+        IngestionResult result =
+                weatherIngestionService.ingestHistoricalWeather(
+                        latitude,
+                        longitude,
+                        location,
+                        startDate,
+                        endDate
+                );
+
+        return ResponseEntity.ok(
+                result.getObservation()
+        );
+    }
+    
 }

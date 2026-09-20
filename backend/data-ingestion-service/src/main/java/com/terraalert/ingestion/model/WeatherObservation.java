@@ -29,9 +29,21 @@ public class WeatherObservation {
 
     private double pressure;
 
+    private Double soilMoisture;
+
+    private java.util.List<Double> past32DaysRainfall;
+
+    private java.util.List<String> dailyDates;
+
+    private java.util.List<Double> dailyTemperatureMax;
+
+    private java.util.List<Double> dailyTemperatureMin;
+
     private LocalDateTime observedAt;
 
     private String source;
+
+    private String predictionTarget;
 
     public WeatherObservation() {
     }
@@ -130,5 +142,53 @@ public class WeatherObservation {
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public Double getSoilMoisture() {
+        return soilMoisture;
+    }
+
+    public void setSoilMoisture(Double soilMoisture) {
+        this.soilMoisture = soilMoisture;
+    }
+
+    public java.util.List<Double> getPast32DaysRainfall() {
+        return past32DaysRainfall;
+    }
+
+    public void setPast32DaysRainfall(java.util.List<Double> past32DaysRainfall) {
+        this.past32DaysRainfall = past32DaysRainfall;
+    }
+
+    public java.util.List<String> getDailyDates() {
+        return dailyDates;
+    }
+
+    public void setDailyDates(java.util.List<String> dailyDates) {
+        this.dailyDates = dailyDates;
+    }
+
+    public java.util.List<Double> getDailyTemperatureMax() {
+        return dailyTemperatureMax;
+    }
+
+    public void setDailyTemperatureMax(java.util.List<Double> dailyTemperatureMax) {
+        this.dailyTemperatureMax = dailyTemperatureMax;
+    }
+
+    public java.util.List<Double> getDailyTemperatureMin() {
+        return dailyTemperatureMin;
+    }
+
+    public void setDailyTemperatureMin(java.util.List<Double> dailyTemperatureMin) {
+        this.dailyTemperatureMin = dailyTemperatureMin;
+    }
+
+    public String getPredictionTarget() {
+        return predictionTarget;
+    }
+
+    public void setPredictionTarget(String predictionTarget) {
+        this.predictionTarget = predictionTarget;
     }
 }

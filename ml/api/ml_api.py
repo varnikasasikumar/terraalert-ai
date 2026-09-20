@@ -69,17 +69,11 @@ def root():
         "status": "running"
     }
 
-
-# ==================================================
-# Flood prediction endpoint
-# ==================================================
-
 @app.post("/api/predict/flood")
 def predict_flood(
     request: FloodPredictionRequest
 ):
 
-    # Convert request into DataFrame
 
     input_data = pd.DataFrame([{
         "reflectivity_mean":

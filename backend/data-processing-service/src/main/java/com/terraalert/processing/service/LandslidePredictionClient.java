@@ -40,20 +40,23 @@ public class LandslidePredictionClient {
          * trained Seattle model.
          */
 
-        request.setRainfall_1d(21.1);
-        request.setRainfall_3d(91.9);
-        request.setRainfall_7d(109.7);
-        request.setRainfall_15d(110.3);
-        request.setRainfall_32d(268.1);
+        request.setRainfall_1d(data.getRainfall1d());
 
-        request.setTemperature_max(10.0);
-        request.setTemperature_min(5.0);
+        request.setRainfall_3d(data.getRainfall3d());
 
-        request.setSoilMoisture(data.getSoilMoisture());
-        request.setElevation(data.getElevation());
+        request.setRainfall_7d(data.getRainfall7d());
 
-        request.setSlope(null);
-        request.setAspect(null);
+        request.setRainfall_15d(data.getRainfall15d());
+
+        request.setRainfall_32d(data.getRainfall32d());
+
+        request.setTemperature_max(data.getTemperatureMax());
+
+        request.setTemperature_min(data.getTemperatureMin());
+
+        request.setSlope(data.getSlope());
+
+        request.setAspect(data.getAspect());
 
         request.setTemperature(data.getTemperature());
         request.setHumidity(data.getHumidity());

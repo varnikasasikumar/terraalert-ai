@@ -35,11 +35,12 @@ public class WeatherObservationRequest {
     @PositiveOrZero(message = "Pressure must be positive")
     private double pressure;
 
-    @NotBlank(message = "Source is required")
     private String source;
     
     private LocalDateTime observedAt;
     
+    private String predictionTarget;
+
     public WeatherObservationRequest() {
     }
 
@@ -129,5 +130,13 @@ public class WeatherObservationRequest {
 
     public void setObservedAt(LocalDateTime observedAt) {
         this.observedAt = observedAt;
+    }
+
+    public String getPredictionTarget() {
+        return predictionTarget;
+    }
+
+    public void setPredictionTarget(String predictionTarget) {
+        this.predictionTarget = predictionTarget;
     }
 }

@@ -23,6 +23,28 @@ public class ProcessedWeatherData {
     private Double soilMoisture;
 
     private Double elevation;
+    
+ // =========================================================
+ // LANDSLIDE FEATURES
+ // =========================================================
+
+ private Double rainfall1d;
+
+ private Double rainfall3d;
+
+ private Double rainfall7d;
+
+ private Double rainfall15d;
+
+ private Double rainfall32d;
+
+ private Double temperatureMax;
+
+ private Double temperatureMin;
+
+ private Double slope;
+
+ private Double aspect;
 
     private LocalDateTime observedAt;
     private Double reflectivityMean;
@@ -37,6 +59,7 @@ public class ProcessedWeatherData {
 
     private Integer radarObservationCount;
     private String source;
+    private String predictionTarget;
     
     public ProcessedWeatherData() {
     }
@@ -119,6 +142,78 @@ public class ProcessedWeatherData {
 
     public void setElevation(Double elevation) {
         this.elevation = elevation;
+    }
+    
+    public Double getRainfall1d() {
+        return rainfall1d;
+    }
+
+    public void setRainfall1d(Double rainfall1d) {
+        this.rainfall1d = rainfall1d;
+    }
+
+    public Double getRainfall3d() {
+        return rainfall3d;
+    }
+
+    public void setRainfall3d(Double rainfall3d) {
+        this.rainfall3d = rainfall3d;
+    }
+
+    public Double getRainfall7d() {
+        return rainfall7d;
+    }
+
+    public void setRainfall7d(Double rainfall7d) {
+        this.rainfall7d = rainfall7d;
+    }
+
+    public Double getRainfall15d() {
+        return rainfall15d;
+    }
+
+    public void setRainfall15d(Double rainfall15d) {
+        this.rainfall15d = rainfall15d;
+    }
+
+    public Double getRainfall32d() {
+        return rainfall32d;
+    }
+
+    public void setRainfall32d(Double rainfall32d) {
+        this.rainfall32d = rainfall32d;
+    }
+
+    public Double getTemperatureMax() {
+        return temperatureMax;
+    }
+
+    public void setTemperatureMax(Double temperatureMax) {
+        this.temperatureMax = temperatureMax;
+    }
+
+    public Double getTemperatureMin() {
+        return temperatureMin;
+    }
+
+    public void setTemperatureMin(Double temperatureMin) {
+        this.temperatureMin = temperatureMin;
+    }
+
+    public Double getSlope() {
+        return slope;
+    }
+
+    public void setSlope(Double slope) {
+        this.slope = slope;
+    }
+
+    public Double getAspect() {
+        return aspect;
+    }
+
+    public void setAspect(Double aspect) {
+        this.aspect = aspect;
     }
 
     public LocalDateTime getObservedAt() {
@@ -207,5 +302,13 @@ public class ProcessedWeatherData {
 
     public void setRadarObservationCount(Integer radarObservationCount) {
         this.radarObservationCount = radarObservationCount;
+    }
+
+    public String getPredictionTarget() {
+        return predictionTarget;
+    }
+
+    public void setPredictionTarget(String predictionTarget) {
+        this.predictionTarget = predictionTarget;
     }
 }

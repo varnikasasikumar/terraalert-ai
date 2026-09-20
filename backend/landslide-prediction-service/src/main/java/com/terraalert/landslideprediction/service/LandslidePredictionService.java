@@ -73,9 +73,9 @@ public class LandslidePredictionService {
         // Convert ML response into TerraAlert response
 
         return new LandslidePredictionResponse(
-                request.getLocation(),
-                request.getLatitude(),
-                request.getLongitude(),
+                request.getLocation() != null ? request.getLocation() : "Selected Location",
+                request.getLatitude() != null ? request.getLatitude() : 0.0,
+                request.getLongitude() != null ? request.getLongitude() : 0.0,
                 mlResponse.getLandslideProbability(),
                 mlResponse.getRisk(),
                 LocalDateTime.now(),
