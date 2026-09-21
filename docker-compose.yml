@@ -1,0 +1,208 @@
+networks:
+  terraalert-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
+
+services:
+  # ==================================================
+  # DATABASE
+  # ==================================================
+  mongodb:
+    image: mongo:7.0
+    container_name: terraalert-mongodb
+    restart: unless-stopped
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - terraalert-network
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --eval 'db.runCommand(\"ping\").ok' --quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ==================================================
+  # PYTHON ML SERVICES
+  # ==================================================
+  landslide-ml:
+    build:
+      context: ./ml
+      dockerfile: Dockerfile.landslide
+    container_name: terraalert-landslide-ml
+    restart: unless-stopped
+    networks:
+      - terraalert-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  flood-ml:
+    build:
+      context: ./ml
+      dockerfile: Dockerfile.flood
+    container_name: terraalert-flood-ml
+    restart: unless-stopped
+    networks:
+      - terraalert-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  gridrad-ml:
+    build:
+      context: ./ml
+      dockerfile: Dockerfile.gridrad
+    container_name: terraalert-gridrad-ml
+    restart: unless-stopped
+    volumes:
+      - ./ml/data/raw/gridrad:/app/data/raw/gridrad:ro
+    networks:
+      - terraalert-network
+
+  # ==================================================
+  # SPRING BOOT BACKEND SERVICES
+  # ==================================================
+  auth-service:
+    build:
+      context: ./backend/auth-service
+      dockerfile: Dockerfile
+    container_name: terraalert-auth-service
+    restart: unless-stopped
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/terraalert
+      CORS_ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_INITIAL_PASSWORD: ${ADMIN_INITIAL_PASSWORD}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - terraalert-network
+
+  alert-management-service:
+    build:
+      context: ./backend/alert-management-service
+      dockerfile: Dockerfile
+    container_name: terraalert-alert-management-service
+    restart: unless-stopped
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/terraalert
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - terraalert-network
+
+  evacuation-resource-service:
+    build:
+      context: ./backend/evacuation-resource-service
+      dockerfile: Dockerfile
+    container_name: terraalert-evacuation-resource-service
+    restart: unless-stopped
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/terraalert
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - terraalert-network
+
+  risk-assessment-service:
+    build:
+      context: ./backend/risk-assessment-service
+      dockerfile: Dockerfile
+    container_name: terraalert-risk-assessment-service
+    restart: unless-stopped
+    networks:
+      - terraalert-network
+
+  flood-prediction-service:
+    build:
+      context: ./backend/flood-prediction-service
+      dockerfile: Dockerfile
+    container_name: terraalert-flood-prediction-service
+    restart: unless-stopped
+    environment:
+      FLOOD_ML_SERVICE_URL: http://flood-ml:5002
+    depends_on:
+      flood-ml:
+        condition: service_healthy
+    networks:
+      - terraalert-network
+
+  landslide-prediction-service:
+    build:
+      context: ./backend/landslide-prediction-service
+      dockerfile: Dockerfile
+    container_name: terraalert-landslide-prediction-service
+    restart: unless-stopped
+    environment:
+      LANDSLIDE_ML_SERVICE_URL: http://landslide-ml:5001
+    depends_on:
+      landslide-ml:
+        condition: service_healthy
+    networks:
+      - terraalert-network
+
+  data-processing-service:
+    build:
+      context: ./backend/data-processing-service
+      dockerfile: Dockerfile
+    container_name: terraalert-data-processing-service
+    restart: unless-stopped
+    environment:
+      FLOOD_PREDICTION_SERVICE_URL: http://flood-prediction-service:8084
+      LANDSLIDE_PREDICTION_SERVICE_URL: http://landslide-prediction-service:8085
+      RISK_ASSESSMENT_SERVICE_URL: http://risk-assessment-service:8086
+      ALERT_MANAGEMENT_SERVICE_URL: http://alert-management-service:8087
+      EVACUATION_RESOURCE_SERVICE_URL: http://evacuation-resource-service:8088
+      GRIDRAD_API_URL: http://gridrad-ml:5003
+      CORS_ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    networks:
+      - terraalert-network
+
+  data-ingestion-service:
+    build:
+      context: ./backend/data-ingestion-service
+      dockerfile: Dockerfile
+    container_name: terraalert-data-ingestion-service
+    restart: unless-stopped
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/terraalert
+      DATA_PROCESSING_SERVICE_URL: http://data-processing-service:8083
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - terraalert-network
+
+  api-gateway:
+    build:
+      context: ./backend/api-gateway
+      dockerfile: Dockerfile
+    container_name: terraalert-api-gateway
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      CORS_ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      DATA_INGESTION_SERVICE_URL: http://data-ingestion-service:8082
+      DATA_PROCESSING_SERVICE_URL: http://data-processing-service:8083
+      FLOOD_PREDICTION_SERVICE_URL: http://flood-prediction-service:8084
+      LANDSLIDE_PREDICTION_SERVICE_URL: http://landslide-prediction-service:8085
+      RISK_ASSESSMENT_SERVICE_URL: http://risk-assessment-service:8086
+      ALERT_MANAGEMENT_SERVICE_URL: http://alert-management-service:8087
+      EVACUATION_RESOURCE_SERVICE_URL: http://evacuation-resource-service:8088
+      AUTH_SERVICE_URL: http://auth-service:8089
+    networks:
+      - terraalert-network

@@ -1,0 +1,11 @@
+flask
+fastapi
+uvicorn
+pydantic
+joblib
+pandas
+numpy
+scikit-learn
+xarray
+netcdf4
+h5netcdf
